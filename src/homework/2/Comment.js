@@ -1,8 +1,16 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
 class Comment extends Component {
+  handelDelete = event => {
+    this.props.onDelete(this.props.id);
+  };
+
   render() {
-    return <div />;
+    return (
+      <ul>
+        {this.props.text} <span onClick={this.handelDelete}>X</span>
+      </ul>
+    );
   }
 }
 
